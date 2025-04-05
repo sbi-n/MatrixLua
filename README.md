@@ -1,24 +1,22 @@
 # 소개
-이 프로젝트는 행렬을 직렬화하여 관리해주는 라이브러리 입니다
 파이썬의 Numpy 패키지에 많은 참고를 하고 있으며\
 수학에서 쓰이는 행렬의 개념을 luau에서 사용하기 위한 모듈입니다\
 Numpy 패키지의 계산을 모방했기 때문에 선형대수에서 정의되지 않은 스칼라 덧셈을 지원합니다
 
 # 예문
 ```lua
-    local Matrix = require("path/to/module")
-    local Types = Matrix.Types
+local Matrix = require("path/to/module")
+local Types = Matrix.Types
     
-    local Value = Matrix.new(
-        Types.UInt8,
-        Matrix.vector(4, 4, 4, 4)
-    ):fill(32)
+local Value = Matrix.new(
+    Types.UInt8,
+    Matrix.vector(4, 4, 4, 4)
+):fill(32)
 
-    print(Value:get(Matrix.vector(0, 0, 0, 0))) --> 32
+print(Value:get(Matrix.vector(0, 0, 0, 0))) --> 32
 
-    Value:set(Matrix.vector(0, 0, 0, 0), 48)
-    print(Value:get(Matrix.vector(0, 0, 0, 0))) --> 48
-
+Value:set(Matrix.vector(0, 0, 0, 0), 48)
+print(Value:get(Matrix.vector(0, 0, 0, 0))) --> 48
 ```
 
 # 개체의 크기
